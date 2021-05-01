@@ -1,19 +1,19 @@
-document.querySelector("#loginForm").addEventListener("submit",event=>{
+document.querySelector("#loginForm").addEventListener("submit", event => {
     event.preventDefault();
     const fetchObj = {
-        email:document.querySelector("#loginEmail").value,
-        password:document.querySelector("#loginPassword").value,
+        username: document.querySelector("#loginUsername").value,
+        password: document.querySelector("#loginPassword").value,
     }
     console.log(fetchObj);
-    fetch("/login",{
-        method:"POST",
-        body:JSON.stringify(fetchObj),
-        headers:{
-            "Content-Type":"application/json"
+    fetch("/login", {
+        method: "POST",
+        body: JSON.stringify(fetchObj),
+        headers: {
+            "Content-Type": "application/json"
         }
-    }).then(res=>{
+    }).then(res => {
         console.log(res);
-        if(res.ok){
+        if (res.ok) {
             console.log("logged in successfully!")
             location.replace("/secretclubpage")
         } else {
@@ -23,23 +23,22 @@ document.querySelector("#loginForm").addEventListener("submit",event=>{
     })
 })
 
-document.querySelector("#signupForm").addEventListener("submit",event=>{
+document.querySelector("#signupForm").addEventListener("submit", event => {
     event.preventDefault();
     const fetchObj = {
-        email:document.querySelector("#signupEmail").value,
-        password:document.querySelector("#signupPassword").value,
-        username:document.querySelector("#signupUsername").value,
+        username: document.querySelector("#signupUsername").value,
+        password: document.querySelector("#signupPassword").value,
     }
     console.log(fetchObj);
-    fetch("/signup",{
-        method:"POST",
-        body:JSON.stringify(fetchObj),
-        headers:{
-            "Content-Type":"application/json"
+    fetch("/signup", {
+        method: "POST",
+        body: JSON.stringify(fetchObj),
+        headers: {
+            "Content-Type": "application/json"
         }
-    }).then(res=>{
+    }).then(res => {
         console.log(res);
-        if(res.ok){
+        if (res.ok) {
             console.log("signed up successfully!")
             location.replace("/secretclubpage")
         } else {

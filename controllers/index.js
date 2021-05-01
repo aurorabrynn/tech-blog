@@ -9,17 +9,12 @@ router.get('/', (req, res) => {
     res.render('index');
 })
 
-router.get("/secretclubpage", (req, res) => {
-    if (!req.session.user) {
-        return res.redirect("/")
-    } else {
-        res.render("secretclub", req.session.user)
-    }
+router.get('/login', (req, res) => {
+    res.render('login');
 })
 
-
-router.get("/secretclub", apiAuth, (req, res) => {
-    res.send(`welcome to the club, ${req.session.user.username}!  We will reach you at ${req.session.user.email}`)
+router.get('/signup', (req, res) => {
+    res.render('signup');
 })
 
 module.exports = router;

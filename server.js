@@ -23,7 +23,7 @@ app.set('view engine', 'handlebars');
 
 app.use(session(
     {
-        secret: process.env.SESSION_SECRET,
+        secret: 'Super secret secret',
         resave: false,
         cookie: {
             maxAge: 1000 * 60 * 60 * 2
