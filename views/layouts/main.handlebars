@@ -19,15 +19,18 @@
                         <a href="/">
                             <li class="nav-item">Home</li>
                         </a>
-                        <a href="#">
+                        <a href="/dashboard">
                             <li class="nav-item">Dashboard</li>
                         </a>
-                        <a href="/login">
-                            <li class="nav-item">Login</li>
-                        </a>
+                        {{#if logged_in}}
                         <a href="#">
                             <li class="nav-item">Logout</li>
                         </a>
+                        {{else}}
+                        <a href="/login">
+                            <li class="nav-item">Login</li>
+                        </a>
+                        {{/if}}
                     </ul>
                 </div>
             </div>

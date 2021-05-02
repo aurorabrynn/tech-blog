@@ -47,7 +47,7 @@ ul {
       font-weight: bold;
   }
 
-  #loginCard, #signupCard {
+  #loginCard, #signupCard, #blogCard {
     background-color: var(--mintGreen);
     border: 5px solid black;
     margin-left: auto;
@@ -65,7 +65,17 @@ ul {
       width: 100%;
   }
 
-  #blogCard.cardHeader{
+  #blogHeader {
     background-color: var(--redBrown);
     color: var(--mintGreen);
+    padding-bottom: 0;
+  }
+
+  #blogRow {
+    align-items: baseline;
+  }
+
+  #blogHeader p {
+    color: #9C9B9D;
+    font-size: 75%;
   }
