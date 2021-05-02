@@ -1,24 +1,24 @@
-document.querySelector("#signupForm").addEventListener("submit", event => {
+const signupFormHandler = async (event) => {
     event.preventDefault();
-    const fetchObj = {
-        username: document.querySelector("#signupUsername").value,
-        password: document.querySelector("#signupPassword").value,
-    }
-    console.log(fetchObj);
-    fetch("/signup", {
-        method: "POST",
-        body: JSON.stringify(fetchObj),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then(res => {
-        console.log(res);
-        if (res.ok) {
-            console.log("signed up successfully!")
-            //location.replace("/secretclubpage")
+
+    const name = document.querySelector('#signupUsername').value.trim();
+    const password = document.querySelector('#signupPassword').value.trim();
+
+    if (name && password) {
+        const response = await fetch('/api/users', {
+            method: 'POST',
+            body: JSON.stringify({ name, password }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (response.ok) {
+            document.location.replace('/profile');
         } else {
-            alert("signup failed!")
-            location.reload();
+            alert(response.statusText);
         }
-    })
-})
+    }
+};
+
+document
+    .querySelector('#signupForm')
+    .addEventListener('submit', signupFormHandler);

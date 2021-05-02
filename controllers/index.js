@@ -1,20 +1,9 @@
-const authRoutes = require("./authRoutes");
-const express = require('express');
-const router = express.Router();
-const apiAuth = require("../middleware/apiAuth")
+const router = require('express').Router();
 
-router.use(authRoutes);
+const apiRoutes = require('./api');
+const homeRoutes = require('./homeRoutes');
 
-router.get('/', (req, res) => {
-    res.render('index');
-})
-
-router.get('/login', (req, res) => {
-    res.render('login');
-})
-
-router.get('/signup', (req, res) => {
-    res.render('signup');
-})
+router.use('/', homeRoutes);
+router.use('/api', apiRoutes);
 
 module.exports = router;
