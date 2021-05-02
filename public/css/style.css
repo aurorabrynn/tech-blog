@@ -64,3 +64,8 @@ ul {
   .btn-secondary {
       width: 100%;
   }
+
+  #blogCard.cardHeader{
+    background-color: var(--redBrown);
+    color: var(--mintGreen);
+  }
