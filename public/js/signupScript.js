@@ -15,7 +15,7 @@ document.querySelector("#signupForm").addEventListener("submit", event => {
         console.log(res);
         if (res.ok) {
             console.log("signed up successfully!")
-            location.replace("/secretclubpage")
+            //location.replace("/secretclubpage")
         } else {
             alert("signup failed!")
             location.reload();

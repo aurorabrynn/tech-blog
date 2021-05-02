@@ -15,7 +15,7 @@ document.querySelector("#loginForm").addEventListener("submit", event => {
         console.log(res);
         if (res.ok) {
             console.log("logged in successfully!")
-            location.replace("/secretclubpage")
+            //location.replace("/secretclubpage")
         } else {
             alert("log in failed!")
             location.reload();
