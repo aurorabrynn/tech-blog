@@ -1,20 +1,4 @@
 {{#if logged_in}}
-<div class="card" id="newBlogCard">
-    <h5 class="card-header">Create New Post</h5>
-    <div class="card-body">
-        <form id="newBlogForm">
-            <div class="form-group">
-                <label for="newTitle">Title</label>
-                <input class="form-control" type="text" name="title" id='newTitle' />
-            </div>
-            <div class="form-group">
-                <label for="newContent">Content</label>
-                <input class="form-control" type="textarea" name="content" id='newContent' />
-            </div>
-            <button class="btn btn-secondary" type="submit" id="createBlogBtn">Create</button>
-        </form>
-    </div>
-</div>
 {{#if blogs.length}}
 <div class="col mt-2 blog-list">
 
@@ -35,3 +19,8 @@
     <button type="button" class="btn btn-lg" id="newBlogBtn"><a href="/dash-create">+ New Post</a></button>
 </div>
 {{/if}}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/js/dashboard.js"></script>

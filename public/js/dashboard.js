@@ -5,7 +5,7 @@ const newFormHandler = async (event) => {
     const content = document.querySelector('#newContent').value.trim();
   
     if (title && content) {
-      const response = await fetch(`/api/blogs`, {
+      const response = await fetch(`/api/blog`, {
         method: 'POST',
         body: JSON.stringify({ title, content }),
         headers: {
@@ -25,7 +25,7 @@ const newFormHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
-      const response = await fetch(`/api/blogs/${id}`, {
+      const response = await fetch(`/api/blog/${id}`, {
         method: 'DELETE',
       });
   
@@ -41,7 +41,7 @@ const newFormHandler = async (event) => {
     .querySelector('#newBlogForm')
     .addEventListener('submit', newFormHandler);
   
-  document
+  /* document
     .querySelector('.blog-list')
-    .addEventListener('click', delButtonHandler);
+    .addEventListener('click', delButtonHandler); */
   
