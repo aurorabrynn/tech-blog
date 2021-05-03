@@ -47,7 +47,7 @@ ul {
       font-weight: bold;
   }
 
-  #loginCard, #signupCard, #blogCard {
+  .card {
     background-color: var(--mintGreen);
     border: 5px solid black;
     margin-left: auto;
@@ -56,7 +56,7 @@ ul {
     width: 80%;
   }
 
-  #loginCard h5, #signupCard h5 {
+  .card h5 {
     color: var(--mintGreen);
     background-color: var(--redBrown);
   }
@@ -78,4 +78,31 @@ ul {
   #blogHeader p {
     color: #9C9B9D;
     font-size: 75%;
+  }
+
+  .blog-list {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #yourBlog {
+    background-color: #666666;
+    border-radius: 10px;
+    padding: 0.5vw;
+    color: white;
+  }
+
+  #yourBlog h5, #yourBlog a{
+    text-decoration: none;
+    color: white;
+  }
+
+  #newBlogBtn {
+    background-color: var(--redBrown);
+  }
+
+  #newBlogBtn a {
+    text-decoration: none;
+    color: white;
   }
