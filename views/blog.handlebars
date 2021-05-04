@@ -12,15 +12,17 @@
 
 {{#if comments.length}}
 {{#each comments as |comment|}}
-    <div class="row mb-2">
-        <div class="col" id="yourComment">
-            <div class="row">
-                <h5 class="col-10"><a href="/comment/{{comment.id}}">{{comment.content}}</a></h5>
-                <p class="col-2">{{format_date date_created}}</p>
-            </div>
+<div class="card" id="blogCard">
+    <div class="card-header container-fluid" id="blogHeader">
+        <div class="row" id="blogRow">
         </div>
     </div>
-    {{/each}}
+    <div class="card-body">
+        <p class="card-text">{{comment.content}}</p>
+        <p class="col">-- {{user.username}}, {{format_date date_created}}</p>
+    </div>
+</div>
+{{/each}}
 </div>
 {{/if}}
 
