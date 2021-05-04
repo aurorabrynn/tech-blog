@@ -1,17 +1,17 @@
-<div class="card" id="newBlogCard">
+<div class="card" id="editBlogCard">
     <h5 class="card-header">Edit Post</h5>
     <div class="card-body">
-        <form id="newBlogForm">
+        <form id="editBlogForm">
             <div class="form-group">
-                <label for="newTitle">Title</label>
-                <input class="form-control" type="text" name="title" id='newTitle' />
+                <label for="editTitle">Title</label>
+                <input class="form-control" type="text" name="title" id='editTitle' value="{{title}}" />
             </div>
             <div class="form-group">
-                <label for="newContent">Content</label>
-                <input class="form-control" type="textarea" name="content" id='newContent' />
+                <label for="editContent">Content</label>
+                <input class="form-control" type="textarea" name="content" id='editContent' value="{{content}}" />
             </div>
-            <button class="btn btn-secondary" type="submit" id="editBlogBtn">Update Post</button>
-            <button class="btn btn-secondary" type="submit" id="delBlogBtn">Delete</button>
+            <button class="btn btn-secondary" type="submit" id="editBlogBtn" data-id="{{id}}">Update Post</button>
+            <button class="btn btn-secondary" id="delBlogBtn" data-id="{{id}}">Delete</button>
         </form>
     </div>
 </div>
@@ -19,4 +19,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="/js/dashboard.js"></script>
+<script src="/js/editScript.js"></script>

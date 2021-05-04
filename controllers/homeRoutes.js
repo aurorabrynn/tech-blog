@@ -7,11 +7,10 @@ router.get('/', async (req, res) => {
         // Get all blogs and JOIN with user data
         const blogData = await Blog.findAll({
             include: [
-                User
-                /* {
-                    // model: User,
+                {
+                    model: User,
                     attributes: ['username'],
-                }, */
+                },
             ],
         });
 
@@ -19,7 +18,6 @@ router.get('/', async (req, res) => {
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
         // Pass serialized data and session flag into template
-        console.log("logged-in:", req.session.logged_in)
         res.render('home', {
             blogs,
             logged_in: req.session.logged_in
@@ -28,25 +26,6 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-router.get('/dashboard', withAuth, async (req, res) => {
-    try {
-      // Find the logged in user based on the session ID
-      const userData = await User.findByPk(req.session.user_id, {
-        attributes: { exclude: ['password'] },
-        include: [{ model: Blog }],
-      });
-  
-      const user = userData.get({ plain: true });
-  
-      res.render('dashboard', {
-        ...user,
-        logged_in: true
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
 
 router.get('/blog/:id', async (req, res) => {
     try {
@@ -61,7 +40,7 @@ router.get('/blog/:id', async (req, res) => {
 
         const blog = blogData.get({ plain: true });
 
-        res.render('blog', {
+        res.render('dash-edit', {
             ...blog,
             logged_in: req.session.logged_in
         });
@@ -70,7 +49,7 @@ router.get('/blog/:id', async (req, res) => {
     }
 });
 
-router.get('/comment/:id', async (req, res) => {
+router.get('/comments/:id', async (req, res) => {
     try {
         const commentData = await Comment.findByPk(req.params.id, {
             include: [

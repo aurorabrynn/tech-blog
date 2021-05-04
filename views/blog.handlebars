@@ -1,11 +1,7 @@
 <div class="card" id="blogCard">
     <div class="card-header container-fluid" id="blogHeader">
         <div class="row" id="blogRow">
-            {{#if logged_in}}
-            <h5 class="col-10"><a href="/blogs/{{id}}">{{title}}</a></h5>
-            {{else}}
-            <h5 class="col-10">foo</h5>
-            {{/if}}
+            <h5 class="col-10">{{title}}</h5>
             <p class="col">Posted by {{user.username}} on {{format_date date_created}}</p>
         </div>
     </div>
@@ -14,6 +10,34 @@
     </div>
 </div>
 
+{{#if comments.length}}
+{{#each comments as |comment|}}
+    <div class="row mb-2">
+        <div class="col" id="yourComment">
+            <div class="row">
+                <h5 class="col-10"><a href="/comment/{{comment.id}}">{{comment.content}}</a></h5>
+                <p class="col-2">{{format_date date_created}}</p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
+
+<div class="card" id="commentCard">
+    <div class="card-header"></div>
+    <div class="card-body">
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="commentContent">Comment</label>
+                <input class="form-control" type="textarea" name="comment" id='commentContent' />
+            </div>
+            <button class="btn btn-secondary" type="submit" id="commentBtn">Submit</button>
+        </form>
+    </div>
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/js/comment.js"></script>

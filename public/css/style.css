@@ -56,11 +56,6 @@ h1 {
     width: 80%;
 }
 
-.card h5, .card a {
-    color: var(--mintGreen);
-    background-color: var(--redBrown);
-}
-
 .btn-secondary {
       width: 100%;
 }
@@ -69,6 +64,11 @@ h1 {
     background-color: var(--redBrown);
     color: var(--mintGreen);
     padding-bottom: 0;
+}
+
+.card h5, #blogCard a {
+    color: var(--mintGreen);
+    background-color: var(--redBrown);
 }
 
 #blogRow {
@@ -105,4 +105,9 @@ h1 {
 #newBlogBtn a {
     text-decoration: none;
     color: white;
+}
+
+#commentCard .card-header {
+    background-color: var(--redBrown);
+    padding: 1.35vw;
 }
