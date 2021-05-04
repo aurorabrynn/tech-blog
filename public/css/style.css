@@ -27,82 +27,82 @@ ul {
     overflow: hidden;
 }
 
-  li {
+li {
     color: var(--mintGreen);
     padding: 0.7vw 0.8vw;
     text-decoration: none;
     font-size: 110%;
-  }
+}
 
-  #logoDiv {
+#logoDiv {
       padding: 1vw;
-  }
+}
 
-  h1 {
+h1 {
       background-color: var(--mintGreen);
       color: var(--redBrown);
       border-radius: 10px;
       padding: 0.1vw 1vw 0.1vw 1vw;
       box-shadow: 5px 5px #A6A6A6;
       font-weight: bold;
-  }
+}
 
-  .card {
+.card {
     background-color: var(--mintGreen);
     border: 5px solid black;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1vw;
     width: 80%;
-  }
+}
 
-  .card h5 {
+.card h5, .card a {
     color: var(--mintGreen);
     background-color: var(--redBrown);
-  }
+}
 
-  .btn-secondary {
+.btn-secondary {
       width: 100%;
-  }
+}
 
-  #blogHeader {
+#blogHeader {
     background-color: var(--redBrown);
     color: var(--mintGreen);
     padding-bottom: 0;
-  }
+}
 
-  #blogRow {
+#blogRow {
     align-items: baseline;
-  }
+}
 
-  #blogHeader p {
+#blogHeader p {
     color: #9C9B9D;
     font-size: 75%;
-  }
+}
 
-  .blog-list {
+.blog-list {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  #yourBlog {
+#yourBlog {
     background-color: #666666;
     border-radius: 10px;
     padding: 0.5vw;
     color: white;
-  }
+}
 
-  #yourBlog h5, #yourBlog a{
+#yourBlog h5, #yourBlog a{
     text-decoration: none;
     color: white;
-  }
+}
 
-  #newBlogBtn {
+#newBlogBtn {
     background-color: var(--redBrown);
-  }
+}
 
-  #newBlogBtn a {
+#newBlogBtn a {
     text-decoration: none;
     color: white;
-  }
+}

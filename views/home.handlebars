@@ -1,12 +1,9 @@
+{{#if logged_in}}
 {{#each blogs as |blog| }}
 <div class="card" id="blogCard">
     <div class="card-header container-fluid" id="blogHeader">
         <div class="row" id="blogRow">
-            {{#if logged_in}}
-            <h5 class="col-10"><a href="/blog/comment">{{title}}</a></h5>
-            {{else}}
-            <h5 class="col-10">{{title}}</h5>
-            {{/if}}
+            <h5 class="col-10"><a href="/blogs/{{id}}">{{title}}</a></h5>
             <p class="col-2">Posted by {{user.username}} on {{format_date date_created}}</p>
         </div>
     </div>
@@ -15,6 +12,23 @@
     </div>
 </div>
 {{/each}}
+
+{{else}}
+
+{{#each blogs as |blog| }}
+<div class="card" id="blogCard">
+    <div class="card-header container-fluid" id="blogHeader">
+        <div class="row" id="blogRow">
+            <h5 class="col-10">foo</h5>
+            <p class="col-2">Posted by {{user.username}} on {{format_date date_created}}</p>
+        </div>
+    </div>
+    <div class="card-body">
+        <p class="card-text">{{content}}</p>
+    </div>
+</div>
+{{/each}}
+{{/if}}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
